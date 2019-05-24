@@ -1,0 +1,173 @@
+.block_course_activities .block-controls {
+  padding: 0 15px;
+}
+.block_course_activities .collapse-expand-all {
+  padding: 0 15px;
+  text-align: right;
+  font-size: 0.8rem;
+}
+.block_course_activities h5 {
+  margin-bottom: 1rem;
+}
+.block_course_activities .sectiontitle {
+  display: flex;
+  padding: 5px 0;
+}
+.block_course_activities .sectiontitle.dividerabove {
+  border-top: 1px solid #252525;
+}
+.block_course_activities .sectiontitle.dividerbelow {
+  border-bottom: 1px solid #252525;
+}
+.block_course_activities .sectiontitle h6 {
+  padding: 0 15px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.block_course_activities .sectiontitle,
+.block_course_activities .sectiontitle h6 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.block_course_activities .sectiontitle .expandtoggle {
+  cursor: pointer;
+  flex-grow: 1;
+}
+.block_course_activities .sectiontitle .expandtoggle:after {
+  float: right;
+  margin-right: 15px;
+  transition: transform .2s linear;
+  -webkit-transition: -webkit-transform 0.2s linear;
+}
+.block_course_activities .sectiontitle .expandtoggle.collapse-expand-icon[aria-expanded="true"]:after {
+  content: "\2212";
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.block_course_activities .sectiontitle .expandtoggle.collapse-expand-icon[aria-expanded="false"]:after {
+  content: "\002b";
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.block_course_activities .accordion-content.dividertop {
+  border-top: 1px solid #252525;
+}
+.block_course_activities .sectionsummary {
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.block_course_activities ul.activities {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.block_course_activities ul.activities li.activityli {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 5px 15px;
+}
+.block_course_activities ul.activities li.activityli:hover {
+  background: #efefef;
+}
+.block_course_activities ul.activities li.activityli.hilited {
+  background: #efefef;
+}
+.block_course_activities ul.activities li.activityli .activityname {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.block_course_activities ul.activities li.activityli .activityname.no-cmicon {
+  padding-left: 0;
+}
+.block_course_activities ul.activities li.activityli .activityname.no-completiontoggles {
+  padding-right: 0;
+}
+.block_course_activities ul.activities li.activityli .cmicon {
+  float: left;
+  width: 16px;
+  margin-top: 3px;
+}
+.block_course_activities ul.activities li.activityli form.togglecompletion {
+  position: relative;
+  margin-top: 3px;
+}
+.block_course_activities ul.activities li.activityli form.togglecompletion button {
+  float: right;
+  padding: 0;
+  line-height: 1;
+}
+.block_course_activities ul.activities li.activityli form.togglecompletion button .icon {
+  display: block;
+  margin-right: 0;
+}
+.block_course_activities ul.activities li.activityli form.togglecompletion .ajaxworking {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  background: url([[pix:i/ajaxloader]]) no-repeat;
+}
+.block_course_activities ul.activities li.activityli span.autocompletion {
+  float: right;
+}
+.block_course_activities ul.activities li.activityli span.autocompletion img {
+  margin-right: 0;
+}
+.block_course_activities ul.activities li.activityli .filler {
+  float: right;
+}
+.block_course_activities .spacer {
+  margin-bottom: 1rem;
+}
+.block_course_activities .message {
+  padding: 0 15px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.mark-as-completed-btn {
+  display: inline-block;
+  border: 1px solid #dfdfdf;
+}
+.mark-as-completed-btn form.togglecompletion {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mark-as-completed-btn form.togglecompletion:hover {
+  cursor: pointer;
+  background: #efefef;
+}
+.mark-as-completed-btn form.togglecompletion > div {
+  float: right;
+}
+.mark-as-completed-btn form.togglecompletion > div button .icon {
+  display: inline-block;
+}
+.mark-as-completed-btn form.togglecompletion > div label {
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 0;
+}
+.mark-as-completed-btn form.togglecompletion .ajaxworking {
+  float: right;
+  position: absolute;
+  margin: 11px 0 0 13px;
+  width: 16px;
+  height: 16px;
+  background: url([[pix:i/ajaxloader]]) no-repeat;
+}
+.mark-as-completed-btn span.autocompletion {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  cursor: default;
+  opacity: 0.65;
+}
+.mark-as-completed-btn span.autocompletion img {
+  display: inline-block;
+}

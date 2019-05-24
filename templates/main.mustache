@@ -1,0 +1,143 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+    @package    block_course_activities
+    @author     Nicholas Yang
+    @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+}}
+{{!
+    @template block-course_activities/main
+
+    This template renders the main contents of the course_activities block.
+
+    Example context (json):
+    {
+        "blocktitle" : "Course activities",
+        "accordion" : true,
+        "accordion_collapse_expand_icon" : true,
+        "accordion_collapse_single" : true,
+        "accordion_collapse_expand_all" : true,
+        "sections" : [
+            [
+                "section_id" : 0,
+                "section_title" : "General",
+                "section_title_link" : true,
+                "section_title_extra_classes" : " dividerbelow",
+                "section_summary" : "",
+                "section_activities_count" : 1,
+                "section_activities" : [
+                    "activity_icon" : ".../image.php/mytheme/page/1543947471/icon",
+                    "completion_toggle" : "<form class="togglecompletion"...</form>",
+                    "activity_name" : "Announcements",
+                    "activity_url" : ".../mod/forum/view.php?id=24",
+                    "activity_name_extra_classes" : " no-completiontoggle",
+                    "activity_li_extra_classes" : " hilited",
+                ],
+                "section_spacer" : true,
+                "section_open" : false,
+                "accordion_content_extra_classes" : "",
+            ],
+        ],
+    }
+}}
+
+{{#sections}}
+
+    {{#blocktitle}}
+        <div class="spacer"></div>
+    {{/blocktitle}}
+    
+    {{#accordion}}
+        {{#accordion_collapse_expand_all}}
+            <div class="collapse-expand-all">
+                <a href="javascript:void(0)" id="accordion-collapse-all">{{# str }} accordion_collapseall, block_course_activities {{/ str }}</a>
+                /
+                <a href="javascript:void(0)" id="accordion-expand-all">{{# str }} accordion_expandall, block_course_activities {{/ str }}</a>
+            </div>
+        {{/accordion_collapse_expand_all}}
+    {{/accordion}}
+    
+    <div id="block-course-activities{{#accordion}}-accordion{{/accordion}}{{#accordion_single}}-single{{/accordion_single}}"{{#accordion}} class="accordion"{{/accordion}}>
+        {{#section_title}}
+            <div class="sectiontitle{{{section_title_extra_classes}}}">
+        {{/section_title}}
+        {{#section_title_link}}
+            <a href="{{{section_title_link}}}">
+        {{/section_title_link}}
+        {{#section_title}}
+            {{#section_title_link}}
+                <h6>{{{section_title}}}</h6>
+            {{/section_title_link}}
+            {{^section_title_link}}
+                {{#section_activities_count}}
+                    {{#accordion}}
+                        <h6 class="expandtoggle{{#accordion_collapse_expand_icon}} collapse-expand-icon{{/accordion_collapse_expand_icon}}" data-toggle="collapse" data-target="#block-course-activities-section-{{{section_id}}}" aria-expanded="{{#section_open}}true{{/section_open}}{{^section_open}}false{{/section_open}}"">{{{section_title}}}</h6>
+                    {{/accordion}}
+                {{/section_activities_count}}
+            {{/section_title_link}}
+        {{/section_title}}
+        {{#section_title_link}}
+            </a>
+        {{/section_title_link}}
+        {{#section_title}}
+            {{#section_title_link}}
+                {{#section_activities_count}}
+                    {{#accordion}}
+                        <a class="expandtoggle{{#accordion_collapse_expand_icon}} collapse-expand-icon{{/accordion_collapse_expand_icon}}" data-toggle="collapse" data-target="#block-course-activities-section-{{{section_id}}}" aria-expanded="{{#section_open}}true{{/section_open}}{{^section_open}}false{{/section_open}}""></a>
+                    {{/accordion}}
+                {{/section_activities_count}}
+            {{/section_title_link}}
+        </div>
+        {{/section_title}}
+    
+        <div id="block-course-activities-section-{{{section_id}}}"{{#accordion}} data-parent="#block-course-activities-accordion-single" class="collapse{{#section_open}} show{{/section_open}} accordion-content{{{accordion_content_extra_classes}}}"{{/accordion}}>
+            {{#section_summary}}
+                <div class="sectionsummary">{{{section_summary}}}</div>
+            {{/section_summary}}
+    
+            {{#section_activities_count}}
+                <ul class="activities">
+                    {{#section_activities}}
+                        <li class="activityli{{{activity_li_extra_classes}}}">
+                            {{#activity_icon}}
+                                <img class="cmicon" src="{{{activity_icon}}}">
+                            {{/activity_icon}}
+                            {{{completion_toggle}}}
+                            {{#activity_name}}
+                                <div class="activityname{{{activity_name_extra_classes}}}">
+                                    {{#activity_url}}
+                                        <a href="{{{activity_url}}}">
+                                    {{/activity_url}}
+                                    {{{activity_name}}}
+                                    {{#activity_url}}
+                                        </a>
+                                    {{/activity_url}}
+            
+                                    {{{addl_info}}}
+                                </div>
+                            {{/activity_name}}
+                        </li>
+                    {{/section_activities}}
+                </ul>
+            {{/section_activities_count}}
+
+            {{#section_spacer}}
+                <div class="spacer"></div>
+            {{/section_spacer}}
+        </div>
+    </div>
+
+{{/sections}}

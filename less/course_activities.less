@@ -1,0 +1,248 @@
+// Styling for the Course Activites block
+@block-lr-padding: 15px;
+@divider-color: #252525;
+.block_course_activities {
+
+    // Fix positioning of editing buttons
+    .block-controls {
+        padding: 0 @block-lr-padding;
+    }
+
+    // Link to collapse/expand all accordion sections
+    .collapse-expand-all {
+        padding: 0 @block-lr-padding;
+        text-align: right;
+        font-size: 0.8rem;
+    }
+
+    // Block title
+    h5 {
+        margin-bottom: 1rem;
+    }
+
+    // Section title
+    .sectiontitle {
+        display: flex;
+        padding: 5px 0;
+
+        &.dividerabove {
+            border-top: 1px solid @divider-color;
+        }
+
+        &.dividerbelow {
+            border-bottom: 1px solid @divider-color;
+        }
+
+        h6 {
+            padding: 0 @block-lr-padding;
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        &, h6 {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        // Expand/collapse toggle. If title is unlinked, the title itself is
+        // the toggle. If title is linked, it's the space after the title.
+        .expandtoggle {
+            cursor: pointer;
+
+            flex-grow: 1; // Fit to rest of div's width (after title)
+        }
+
+        // Collapse/expand icon (+/-)
+        .expandtoggle:after {
+            float: right;
+            margin-right: @block-lr-padding;
+            transition: transform .2s linear;
+            -webkit-transition: -webkit-transform .2s linear;
+        }
+
+        .expandtoggle.collapse-expand-icon[aria-expanded="true"]:after {
+            content: "\2212";
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .expandtoggle.collapse-expand-icon[aria-expanded="false"]:after {
+            content: "\002b";
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+    }
+
+    // Accordion content
+    .accordion-content {
+        // If option is set to have divider below only when section is open
+        &.dividertop {
+            border-top: 1px solid @divider-color;
+        }
+    }
+
+    // Section summary
+    .sectionsummary {
+        padding: 5px @block-lr-padding;
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    // Course activities
+    ul.activities {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+
+        li.activityli {
+            display: inline-block;
+            width: 100%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 5px @block-lr-padding;
+
+            &:hover {
+                background: #efefef;
+            }
+
+            // Used to show current activity
+            &.hilited {
+                background: #efefef;
+            }
+
+            // Activity name
+            .activityname {
+                padding-left: 24px;  // Space for the activity icon
+                padding-right: 24px; // Space for the completion icon
+
+                &.no-cmicon {
+                    padding-left: 0;
+                }
+
+                &.no-completiontoggles {
+                    padding-right: 0;
+                }
+            }
+
+            // Activity (course module) icon
+            .cmicon {
+                float: left;
+                width: 16px;
+                margin-top: 3px; // Vertically center
+            }
+
+            // Toggle completion icon
+            form.togglecompletion {
+                position: relative;
+                margin-top: 3px; // Vertically center
+
+                button {
+                    float: right;
+                    padding: 0;
+                    line-height: 1;
+
+                    .icon {
+                        display: block;
+                        margin-right: 0;
+                    }
+                }
+
+                .ajaxworking {
+                    width: 16px;
+                    height: 16px;
+                    position: absolute;
+                    right: 1px;
+                    top: 1px;
+                    background: url([[pix:i/ajaxloader]]) no-repeat;
+                }
+            }
+
+            // Non-clickable completion icon, such as when editing is on
+            span.autocompletion {
+                float: right;
+
+                img {
+                    margin-right: 0;
+                }
+            }
+
+            // Filler appears if there's no completion icon and editing is on
+            .filler {
+                float: right;
+            }
+        }
+    }
+
+    // Spacer between sections
+    .spacer {
+        margin-bottom: 1rem;
+    }
+
+    // Debug messages for Site Admin
+    .message {
+        padding: 0 @block-lr-padding;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+
+}
+
+// Styling for Mark As Complete button
+.mark-as-completed-btn {
+    display: inline-block;
+    border: 1px solid #dfdfdf;
+
+    // Toggle completion icon
+    form.togglecompletion {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:hover {
+            cursor: pointer;
+            background: #efefef;
+        }
+
+        > div {
+            float: right;
+            button {
+                .icon {
+                    display: inline-block;
+                }
+            }
+
+            label {
+                vertical-align: middle;
+                cursor: pointer;
+                margin: 0;
+            }
+        }
+
+        .ajaxworking {
+            float: right;
+            position: absolute;
+            margin: 11px 0 0 13px;
+
+            width: 16px;
+            height: 16px;
+
+            background: url([[pix:i/ajaxloader]]) no-repeat;
+        }
+    }
+
+    // Non-clickable (disabled) button, such as when editing is on
+    span.autocompletion {
+        display: inline-block;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+
+        cursor: default;
+        opacity: 0.65;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+}
