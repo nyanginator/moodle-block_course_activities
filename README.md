@@ -247,4 +247,4 @@ Uninstall by going to Site Administration > Plugins > Blocks > Manage Blocks and
 Contact
 =======
 Nicholas Yang\
-http://nyanginator.wixsite.com/home
+https://nicky.pairsite.com
