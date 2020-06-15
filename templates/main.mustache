@@ -84,7 +84,7 @@
             {{^section_title_link}}
                 {{#section_activities_count}}
                     {{#accordion}}
-                        <h6 class="expandtoggle{{#accordion_collapse_expand_icon}} collapse-expand-icon{{/accordion_collapse_expand_icon}}" data-toggle="collapse" data-target="#block-course-activities-section-{{{section_id}}}" aria-expanded="{{#section_open}}true{{/section_open}}{{^section_open}}false{{/section_open}}"">{{{section_title}}}</h6>
+                        <h6 class="expandtoggle{{#accordion_collapse_expand_icon}} collapse-expand-icon{{/accordion_collapse_expand_icon}}" data-toggle="collapse" data-target="#block-course-activities-section-{{{section_id}}}" aria-expanded="{{#section_open}}true{{/section_open}}{{^section_open}}false{{/section_open}}">{{{section_title}}}</h6>
                     {{/accordion}}
                 {{/section_activities_count}}
             {{/section_title_link}}
@@ -96,14 +96,14 @@
             {{#section_title_link}}
                 {{#section_activities_count}}
                     {{#accordion}}
-                        <a class="expandtoggle{{#accordion_collapse_expand_icon}} collapse-expand-icon{{/accordion_collapse_expand_icon}}" data-toggle="collapse" data-target="#block-course-activities-section-{{{section_id}}}" aria-expanded="{{#section_open}}true{{/section_open}}{{^section_open}}false{{/section_open}}""></a>
+                        <a class="expandtoggle{{#accordion_collapse_expand_icon}} collapse-expand-icon{{/accordion_collapse_expand_icon}}" data-toggle="collapse" data-target="#block-course-activities-section-{{{section_id}}}" aria-expanded="{{#section_open}}true{{/section_open}}{{^section_open}}false{{/section_open}}"></a>
                     {{/accordion}}
                 {{/section_activities_count}}
             {{/section_title_link}}
         </div>
         {{/section_title}}
     
-        <div id="block-course-activities-section-{{{section_id}}}"{{#accordion}} data-parent="#block-course-activities-accordion-single" class="collapse{{#section_open}} show{{/section_open}} accordion-content{{{accordion_content_extra_classes}}}"{{/accordion}}>
+        <div id="block-course-activities-section-{{{section_id}}}"{{#accordion}} data-parent="#block-course-activities-accordion{{#accordion_single}}-single{{/accordion_single}}" class="collapse{{#section_open}} show{{/section_open}} accordion-content{{{accordion_content_extra_classes}}}"{{/accordion}}>
             {{#section_summary}}
                 <div class="sectionsummary">{{{section_summary}}}</div>
             {{/section_summary}}
