@@ -246,5 +246,5 @@ Uninstall by going to Site Administration > Plugins > Blocks > Manage Blocks and
 
 Contact
 =======
-Nicholas Yang\
-https://nicky.pairsite.com
+Nicholas Yang  
+https://nyanginator.com
